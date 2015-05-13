@@ -1,42 +1,87 @@
 <!DOCTYPE html>
+<html >
+<head>
+    <meta charset="utf-8">
+    <title data-bind="text:appTitle" id="app_title"></title>
+    
+    <script src="js/jquery.min.js"></script>
+    
+    <link rel="stylesheet" href="libs/kendo/styles/kendo.mobile.all.min.css" /> 
+    <script src="libs/kendo/js/kendo.all.min.js"></script>
+    
+    <script src="js/init.js"></script>
+    
+    <link rel="stylesheet" href="styles/main.css" />
+    <script src="js/main.js"></script>
+    
+    <script src="cordova.js"></script>
+</head>
+<body>
 <!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
+###################################
+# SideMenu
+###################################
 -->
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World!</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-    </body>
+<div data-role="drawer" id="my-drawer" style="width: 304px;" >
+    <div class='upper_background' data-role="header"> 
+	<div class='sidemenu_avatar'></div>
+	<div class="user_data"> ataken@ufamts.ru <span class="km-icon km-login login"></span></div>
+    </div>
+    <ul data-role="listview" data-style="inset" data-type="group">
+	<li>
+	    <ul>
+		<li data-icon="webcams"><a href="views/page-webcams.html">Вебкамеры</a></li>
+		<li data-icon="reviews"><a href="views/page-reviews.html">Отзывы</a></li>
+		<li data-icon="weather"><a href="views/page-weather.html">Погода</a></li>
+		<li data-icon="rent"><a href="views/page-hotels.html">Жилье</a></li>
+		<li data-icon="trails"><a href="views/page-trails.html">Трассы и подъемники</a></li>
+		<li data-icon="meal"><a href="views/page-meal.html">Еда</a></li>
+		<li data-icon="fun"><a href="views/page-funs.html">Развлечения</a></li>
+		<li data-icon="maps"><a href="views/page-map.html">Карта</a></li>
+		<li data-icon="prices"><a href="views/page-prices.html">Цены</a></li>
+		<li data-icon="catalog"><a href="views/page-catalog.html">Весь справочник</a></li>
+		<li data-icon="nedoma"><a href="views/page-about.html">Не дома.ру</a></li>
+	    </ul>
+	</li>
+    </ul>
+</div>
+<!--
+###################################
+# SideMenu end
+###################################
+-->
+
+<!--
+###################################
+# Main Page Content
+###################################
+-->
+<div data-role="view" id="drawer-home" data-layout="drawer-layout" data-title='Начальная страница'>
+    <div style='padding:25px'>*Я ТЕСТОВЫЙ КОНТЕНТ*</div>
+</div>
+<!--
+###################################
+# Main Page Content end
+###################################
+-->    
+    
+<!--
+###################################
+# Header-of-MainPage
+###################################
+-->
+<div data-role="layout" data-id="drawer-layout">
+    <header data-role="header">
+		<div data-role="navbar">
+	    	<a data-role="button" data-rel="drawer" href="#my-drawer" data-icon="drawer-button" data-align="left"></a>
+	    	<div  data-role="view-title"></div>
+		</div>
+    </header>
+</div>
+<!--
+###################################
+# Header-of-MainPage end
+###################################
+-->
+</body>
 </html>

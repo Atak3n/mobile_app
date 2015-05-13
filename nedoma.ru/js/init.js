@@ -31,10 +31,10 @@ var app = {
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicity call 'app.receivedEvent(...);'
+    // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-        navigator.splashscreen.hide();
+        //app.receivedEvent('deviceready');
+		navigator.splashscreen.hide();
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -48,3 +48,4 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+app.initialize();

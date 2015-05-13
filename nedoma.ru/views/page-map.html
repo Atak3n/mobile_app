@@ -1,0 +1,30 @@
+<div data-role="view" id="map_role" data-layout="drawer-layout" data-init="mapInit" data-title="Карта" data-model="mapModel">
+   	<script src="js/model-maps.js"></script>
+    <link rel="stylesheet" href="libs/leaflet/leaflet.css" />
+    <script src="libs/leaflet/leaflet.js"></script>
+    <div data-role="header"> 
+		<div data-role="navbar">
+	    	<a data-role="button" data-rel="drawer" href="#my-drawer" data-icon="drawer-button" data-align="left"></a>
+	    	<a data-role="button" data-align="left" data-icon="layers"  data-bind="click: showSubmenu" data-transition="slide"></a>
+			<div id='map_searcher'>
+        		<div data-bind="visible: isTitleVisible" data-role="view-title"></div>
+        		<input  data-bind="visible: isSearchVisible" type="search" value="Поиск..." id='search_map'/>
+            </div>
+            
+    	    <a data-role="button" data-icon="search" data-align="right" data-bind="click: showSearchInput"></a>
+    	    <a data-role="button" data-align="right" data-icon="add_menu" href='#map-right-drawer' data-rel="drawer"></a>
+		</div>
+		<div class="map_submenu" data-transition="slide">
+	    	<ul data-role="buttongroup" data-index="1" data-bind="visible: isSubmenuVisible" >
+				<li data-icon="play"></li>
+				<li data-icon="pause"></li>
+				<li data-icon="rewind"></li>
+				<li data-icon="fastforward"></li>
+				<li data-icon="globe"></li>
+	    	</ul> 
+		</div>
+    </div>   
+    <div data-role="scroller">
+			<div id="map_canvas"></div>
+    </div>
+<div> 
