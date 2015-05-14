@@ -17,6 +17,11 @@
  * under the License.
  */
 var app = {
+    
+    //app release - debug or production
+    //release:'debug',
+    release:'production',
+    
     // Application Constructor
     initialize: function() {
         this.bindEvents();
@@ -46,6 +51,10 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+    C_L:function(text) {
+        if(this.release=="production") return false;
+        console.log(text);
     }
 };
 app.initialize();
