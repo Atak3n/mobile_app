@@ -1,106 +1,108 @@
-.km-ios #my-drawer .km-content, .km-android #my-drawer .km-content, .km-blackberry #my-drawer .km-content,
-.km-ios #my-drawer .km-list > li, .km-android #my-drawer .km-list > li, .km-blackberry #my-drawer .km-list > li,
-.km-ios #my-drawer .km-listview-link > .km-icon, .km-android #my-drawer .km-listview-link > .km-icon, .km-blackberry #my-drawer .km-listview-link > .km-icon,
-.km-ios #my-drawer .km-list li > .km-icon, .km-android #my-drawer .km-list li > .km-icon, .km-blackberry #my-drawer .km-list li > .km-icon
-{
-    background-color: #4e4e4e;
-    color: #fff;
-}
+  .km-ios #my-drawer .km-content, .km-android #my-drawer .km-content, .km-blackberry #my-drawer .km-content,
+    .km-ios #my-drawer .km-list > li, .km-android #my-drawer .km-list > li, .km-blackberry #my-drawer .km-list > li,
+    .km-ios #my-drawer .km-listview-link > .km-icon, .km-android #my-drawer .km-listview-link > .km-icon, .km-blackberry #my-drawer .km-listview-link > .km-icon,
+    .km-ios #my-drawer .km-list li > .km-icon, .km-android #my-drawer .km-list li > .km-icon, .km-blackberry #my-drawer .km-list li > .km-icon
+    {
+        background-color: #4e4e4e;
+        color: #fff;
+    }
 
-.km-ios #my-drawer .km-group-title,
-.km-blackberry #my-drawer .km-group-title
-{
-    background-color: #6e6e6e;
-    color: #fff;
-}
+    .km-ios #my-drawer .km-group-title,
+    .km-blackberry #my-drawer .km-group-title
+    {
+        background-color: #6e6e6e;
+        color: #fff;
+    }
 
-.km-drawer-button:before, .km-drawer-button:after  { content: "\E077"; }
-.km-inbox:before, .km-inbox:after { content: "\E0B0"; }
-.km-sent:before, .km-sent:after { content: "\E0C6"; }
-.km-trash:before, .km-trash:after { content: "\E0C3"; }
-.km-spam:before, .km-spam:after { content: "\E0C5"; }
-.km-star:before, .km-star:after { content: "\E0D7"; }
-.km-settings:before, .km-settings:after { content: "\E0DA"; }
-.km-off:before, .km-off:after { content: "\E0B9"; }
+    .km-drawer-button:before, .km-drawer-button:after  { content: "\E077"; }
+    .km-inbox:before, .km-inbox:after { content: "\E0B0"; }
+    .km-sent:before, .km-sent:after { content: "\E0C6"; }
+    .km-trash:before, .km-trash:after { content: "\E0C3"; }
+    .km-spam:before, .km-spam:after { content: "\E0C5"; }
+    .km-star:before, .km-star:after { content: "\E0D7"; }
+    .km-settings:before, .km-settings:after { content: "\E0DA"; }
+    .km-off:before, .km-off:after { content: "\E0B9"; }
 
-.inboxList
-{
-    font-size: .8em;
-}
+    .inboxList
+    {
+        font-size: .8em;
+    }
 
-.inboxList p,
-.inboxList h2,
-.inboxList h3
-{
-    margin: 5px 2px;
-}
+    .inboxList p,
+    .inboxList h2,
+    .inboxList h3
+    {
+        margin: 5px 2px;
+    }
 
-.inboxList p,
-.inboxList h3
-{
-    color: #777;
-}
+    .inboxList p,
+    .inboxList h3
+    {
+        color: #777;
+    }
 
-.inboxList h3.time
-{
-    color: #369;
-    float: left;
-    margin-right: 10px;
-}
+    .inboxList h3.time
+    {
+        color: #369;
+        float: left;
+        margin-right: 10px;
+    }
 
-#drawer-spam .spam
-{
-    color: darkred;
-    background: rgb(51,51,51);
-    display: block;
-    margin: 2em;
-    font-size: 1.4em;
-}
+    #drawer-spam .spam
+    {
+        color: darkred;
+        background: rgb(51,51,51);
+        display: block;
+        margin: 2em;
+        font-size: 1.4em;
+    }
 
-#drawer-spam .spam .km-text
-{
-    color: white;
-}
+    #drawer-spam .spam .km-text
+    {
+        color: white;
+    }
 
-.km-ios #listview-home .km-content {
-    background: url(../content/shared/images/patterns/pattern2.png);
-    box-shadow: inset 0 0 30px #95764D;
-    -webkit-box-shadow: inset 0 0 30px #95764D;
-}
-.km-ios #listview-home .km-listview .km-list {
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    box-shadow: 0 1px 5px #95764D;
-    -webkit-box-shadow: 0 1px 5px #95764D;
-}
-.km-ios #listview-home .km-listview .km-list > li {
-    border: none;
-}
-.km-ios #listview-home .km-listview .km-list > li:last-child {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
-.km-ios #listview-home .km-navbar {
-    background: url(../content/shared/images/patterns/pattern9.png);
-}
-.km-tablet .km-ios #listview-home .km-view-title {
-    color: #fff;
-    text-shadow: 0 -1px rgba(0,0,0,.5);
-}
-.km-ios #listview-home .km-navbar .km-button {
-    background-color: red;
-}
 
-#layoutView .km-view-title
-{
-    visibility: inherit;
-}
+  .km-ios #listview-home .km-content {
+        background: url(../content/shared/images/patterns/pattern2.png);
+        box-shadow: inset 0 0 30px #95764D;
+        -webkit-box-shadow: inset 0 0 30px #95764D;
+    }
+    .km-ios #listview-home .km-listview .km-list {
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        box-shadow: 0 1px 5px #95764D;
+        -webkit-box-shadow: 0 1px 5px #95764D;
+    }
+    .km-ios #listview-home .km-listview .km-list > li {
+        border: none;
+    }
+    .km-ios #listview-home .km-listview .km-list > li:last-child {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    .km-ios #listview-home .km-navbar {
+        background: url(../content/shared/images/patterns/pattern9.png);
+    }
+    .km-tablet .km-ios #listview-home .km-view-title {
+        color: #fff;
+        text-shadow: 0 -1px rgba(0,0,0,.5);
+    }
+    .km-ios #listview-home .km-navbar .km-button
+    {
+        background-color: red;
+    }
 
-.km-android #layoutView .km-view-title
-{
-    display: block;
-    position: static;
-}
+     #layoutView .km-view-title
+    {
+        visibility: inherit;
+    }
+
+    .km-android #layoutView .km-view-title
+    {
+        display: block;
+        position: static;
+    }
 
 .clear
 {
@@ -111,9 +113,9 @@
 /* custom navbar */
 
 .km-view .km-navbar {
-    background-color: #4caf50;
-    height: 4.15em;
-    line-height: 3em;
+  background-color: #4caf50;
+  height: 4.15em;
+  line-height: 3em;
 }
 .km-drawer .km-content { background-color: rgb(34, 41, 51); color: white;}
 
@@ -121,14 +123,11 @@
 
 .upper_background {
     background: url('../images/sidebar_img.png') scroll 0 0 transparent !important;
-    height: 194px;
+  height: 194px;
 }
 
 .sidemenu_avatar {
     margin:40px 0px 0px 20px;
-    width:63px;
-    height:63px;
-    background: url("../images/sidebar_avatar.png");
 }
 
 .login {
@@ -138,170 +137,178 @@
 
 .user_data {
     background-color: rgba(0, 0, 0, 0.35);
-    bottom: 0;
-    color: white;
-    font-size: 1em;
-    height: 46px;
-    left: 0;
-    line-height: 3em;
-    padding: 0 20px;
-    position: absolute;
-    width: 100%;
+bottom: 0;
+color: white;
+font-size: 1em;
+height: 46px;
+left: 0;
+line-height: 3em;
+padding: 0 20px;
+position: absolute;
+width: 100%;
 }
 
 /* Иконочки */
 
-.km-add_menu:after,
-.km-add_menu:before
-{
-    content: "\e0f1";
-}
+  .km-add_menu:after,
+    .km-add_menu:before
+    {
+        content: "\e0f1";
+    }
 
-.km-layers:after,
-.km-layers:before
-{
-    content: "\e320";
-}
+    .km-layers:after,
+    .km-layers:before
+    {
+        content: "\e320";
+    }
+
 .km-login:after,
-.km-login:before
-{
-    content: "\e0ca";
-}
+    .km-login:before
+    {
+        content: "\e0ca";
+    }
 
 .km-webcams:after,
-.km-webcams:before
-{
-    content: "\e08b";
-    margin-left: -55px;
-    color: #7fabf2 ;
-}
+    .km-webcams:before
+    {
+        content: "\e08b";
+        margin-left: -55px;
+        color: #7fabf2 ;
+    }
 
 .km-reviews:after,
-.km-reviews:before
-{
-    content: "\e091";
-    margin-left: -55px;
-    color: #7f47dd ;
-}
+    .km-reviews:before
+    {
+        content: "\e091";
+        margin-left: -55px;
+        color: #7f47dd ;
+    }
 
 
 .km-weather:after,
-.km-weather:before
-{
-    content: "\e08e";
-    margin-left: -55px;
-}
+    .km-weather:before
+    {
+        content: "\e08e";
+        margin-left: -55px;
+    }
+
 .km-rent:after,
-.km-rent:before
-{
-    content: "\e0af";
-    margin-left: -55px;
-    color: #00b6f9;
-}
+    .km-rent:before
+    {
+        content: "\e0af";
+        margin-left: -55px;
+        color: #00b6f9;
+    }
+
 .km-trails:after,
-.km-trails:before
-{
-    content: "\e0d1";
-    margin-left: -55px;
-    color: #ff0000;
-}
+    .km-trails:before
+    {
+        content: "\e0d1";
+        margin-left: -55px;
+        color: #ff0000;
+    }
+
 .km-meal:after,
-.km-meal:before
-{
-    content: "\e0a9";
-    margin-left: -55px;
-    color: #39b54a ;
-}
+    .km-meal:before
+    {
+        content: "\e0a9";
+        margin-left: -55px;
+        color: #39b54a ;
+    }
+
 .km-fun:after,
-.km-fun:before
-{
-    content: "\e0a7";
-    margin-left: -55px;
-    color: #ff9300 ;
-}
+    .km-fun:before
+    {
+        content: "\e0a7";
+        margin-left: -55px;
+        color: #ff9300 ;
+    }  
+
 
 .km-maps:after,
-.km-maps:before
-{
-    content: "\e0dc";
-    margin-left: -55px;
-    color: #8cc63f ;
-}
+    .km-maps:before
+    {
+        content: "\e0dc";
+        margin-left: -55px;
+        color: #8cc63f ;
+    }
 
 .km-prices:after,
-.km-prices:before
-{
-    content: "\e0c1";
-    margin-left: -55px;
-    color: #a67c52 ;
-}   
+    .km-prices:before
+    {
+        content: "\e0c1";
+        margin-left: -55px;
+        color: #a67c52 ;
+    }   
 
 .km-catalog:after,
-.km-catalog:before
-{
-    content: "\e0cf";
-    margin-left: -55px;
-    color: #d4145a ;
-}
+    .km-catalog:before
+    {
+        content: "\e0cf";
+        margin-left: -55px;
+        color: #d4145a ;
+    }          
+   
+
 .km-nedoma:after,
-.km-nedoma:before
-{
-    content: "\e0cd";
-    margin-left: -55px;
-    color: #d3a531 ;
-}
+    .km-nedoma:before
+    {
+        content: "\e0cd";
+        margin-left: -55px;
+        color: #d3a531 ;
+    }    
 
 #my-drawer .km-material .km-listinset, .km-material .km-listgroupinset {
-    margin: 0;
+  margin: 0;
 }
 
 #my-drawer .km-list > li {
-    padding: 0.72em;
+  padding: 0.72em;
 }
 
 #my-drawer .km-list {
-    letter-spacing: -0.03em;
+  letter-spacing: -0.03em;
 }
 
 .km-material .km-navbar .km-view-title {
-    line-height: 3em;
+  line-height: 3em;
 }
 
 .km-material .km-widget.km-navbar .km-buttongroup .km-button {
-    color: black;
+  color: black;
 }
 
 /* webcams */
 
 .webcamera_text {
-    background-color: rgba(0, 0, 0, 0.5);
-    bottom: 0;
-    color: white;
-    font-size: 1.25em;
-    font-weight: bold;
-    height: 60px;
-    line-height: 60px;
-    padding: 0 1em;
-    position: absolute;
-    width: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+bottom: 0;
+color: white;
+font-size: 1.25em;
+font-weight: bold;
+height: 60px;
+line-height: 60px;
+padding: 0 1em;
+position: absolute;
+width: 100%;
 }
 
 .maincamera {
-    background-image: url("../images/karmasee-restaurant.jpg");
-    background-position: center center;
-    background-size: auto 100%;
-    height: 270px;
-    position: relative;
-    width: 100%;
-    transition: all 1s ease 0s;
+background-image: url("../images/karmasee-restaurant.jpg");
+background-position: center center;
+background-size: auto 100%;
+height: 270px;
+position: relative;
+width: 100%;
+transition: all 1s ease 0s;
 }
 
 .secondtiercamera
 {
-    width:50%;
-    float:left; 
-    height: 135px;
-    position:relative;
+width:50%;
+float:left; 
+height: 135px;
+position:relative;
 }
 
 /* reviews */
@@ -312,33 +319,54 @@
 }
 .reviews_head
 {
-    
+font-size: 1.75em;
+line-height: 55px;
+padding: 26px 0;
+}
+.reviews_line
+{
+vertical-align:middle;    
+position:relative;
+}
+.reviews_line .km-material, .km-material *
+{
+vertical-align:middle;    
+}
+.reviews_line img
+{
+    padding: 0 17px;
 }
 .reviews_time
 {
-    float: right;
-    font-size: 18pt;
-    margin-right: 2.75em;
-    white-space: nowrap;  
+float: right;
+position: absolute;
+right: 50px;
+top: 0;
+white-space: nowrap;
 }
 .km-timer:after,
-.km-timer:before
+    .km-timer:before
 {
-    content: "\e08d";
-    float: left;
-    margin: 0;
+     content: "\e08d";
+float: left;
+margin: 0;
+line-height: 2em;
 }
 
 .reviews_button {
-    background-color: rgb(76, 175, 82);
-    color: white;
-    margin: 4.5%;
-    padding: 20px 0;
-    width: 40%;
-    font-size:14pt;
+    background-color: rgb(76, 175, 82) !important;
+color: white;
+margin: 4.5%;
+padding: 1.2em 0 !important;
+width: 40%;
+font-size:1.2em !important;
 }
-.map_submenu {
-    background-color: rgba(255, 255, 255, 0.75);
-    position: fixed;
-    width: 100%;z-index: -1;
+
+.reviews_avatar {
+    float:left;
+    margin-left: 1em;
+}
+
+.reviews_name {
+    margin-left: 1em; 
 }
