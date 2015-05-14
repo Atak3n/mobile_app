@@ -1,14 +1,15 @@
 var MapGlobalObject={
+    map_markers:{},
     autocomplete_data:["a","as","asd","asdf","asdfg","asdfgh","asdfghj"],
     mapInit: function(){
     	$('#map_canvas').height($('#map_role').height()-$('#map_role .km-navbar').height());
     	//$('#map_canvas').height("300px");
     	var map = L.map('map_canvas').setView([54.733333, 55.966667], 12);
     	L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(map);
-    	var markers = new L.FeatureGroup();
-    	markers.addLayer(L.marker([54.7386, 55.9633],{id: 1}).addTo(map).on('click',function(e){markers.clearLayers();}));
-    	markers.addLayer(L.marker([54.7486, 55.9633],{id: 2}).addTo(map).on('click',function(e){markers.clearLayers();}));
-    	map.addLayer(markers);
+    	map_markers = new L.FeatureGroup();
+    	map_markers.addLayer(L.marker([54.7386, 55.9633],{id: 1}).addTo(map).on('click',function(e){map_markers.clearLayers();}));
+    	map_markers.addLayer(L.marker([54.7486, 55.9633],{id: 2}).addTo(map).on('click',function(e){map_markers.clearLayers();}));
+    	map.addLayer(map_markers);
 	}
 };
 var mapModel = kendo.observable({
