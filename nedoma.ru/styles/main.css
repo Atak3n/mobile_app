@@ -271,7 +271,7 @@ width: 100%;
 }
 
 .km-material .km-navbar .km-view-title {
-  line-height: 3em;
+  line-height: 3.3em;
 }
 
 .km-material .km-widget.km-navbar .km-buttongroup .km-button {
@@ -369,4 +369,20 @@ font-size:1.2em !important;
 
 .reviews_name {
     margin-left: 1em; 
+}
+
+/* maps */
+#map_searcher
+{
+margin: 0 auto;
+width: 45%;
+padding: 0 10px;
+}
+.k-list 
+{
+   background: rgba(255,255,255, 0.75);
+list-style: none outside none;
+margin: 5px 0;
+padding: 0 10px;
+width: 12em;
 }
