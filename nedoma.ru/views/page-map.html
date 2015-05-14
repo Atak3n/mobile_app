@@ -1,4 +1,4 @@
-<div data-role="view" id="map_role" data-layout="drawer-layout" data-init="mapInit" data-title="Карта" data-model="mapModel">
+<div data-role="view" id="map_role" data-layout="drawer-layout" data-init="MapGlobalObject.mapInit" data-title="Карта" data-model="mapModel">
    	<script src="js/model-maps.js"></script>
     <link rel="stylesheet" href="libs/leaflet/leaflet.css" />
     <script src="libs/leaflet/leaflet.js"></script>
@@ -8,7 +8,7 @@
 	    	<a data-role="button" data-align="left" data-icon="layers"  data-bind="click: showSubmenu" data-transition="slide"></a>
 			<div id='map_searcher'>
         		<div data-bind="visible: isTitleVisible" data-role="view-title"></div>
-        		<input  data-bind="visible: isSearchVisible" type="search" value="Поиск..." id='search_map'/>
+        		<input  data-bind="visible: isSearchVisible" type="search" id='search_map' />
             </div>
             
     	    <a data-role="button" data-icon="search" data-align="right" data-bind="click: showSearchInput"></a>
