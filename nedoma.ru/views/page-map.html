@@ -12,15 +12,15 @@
             </div>
             
     	    <a data-role="button" data-icon="search" data-align="right" data-bind="click: showSearchInput"></a>
-    	    <a data-role="button" data-align="right" data-icon="add_menu" href='#map-right-drawer' data-rel="drawer"></a>
+    	  <!--  <a data-role="button" data-align="right" data-icon="add_menu" href='#map-right-drawer' data-rel="drawer"></a>-->
 		</div>
 		<div class="map_submenu" data-transition="slide">
 	    	<ul data-role="buttongroup" data-index="1" data-bind="visible: isSubmenuVisible" >
-				<li data-icon="play"></li>
-				<li data-icon="pause"></li>
-				<li data-icon="rewind"></li>
-				<li data-icon="fastforward"></li>
-				<li data-icon="globe"></li>
+				<li name='shop' data-icon="play" data-bind="click: showLayers"></li>
+				<li name='baza' data-icon="pause" data-bind="click: showLayers"></li>
+				<li name='food' data-icon="rewind" data-bind="click: showLayers"></li>
+				<li name='funs' data-icon="fastforward" data-bind="click: showLayers"></li>
+				<li name='housing' data-icon="globe" data-bind="click: showLayers"></li>
 	    	</ul> 
 		</div>
     </div>   

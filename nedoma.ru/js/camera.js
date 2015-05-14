@@ -1,10 +1,3 @@
-var kendo_app = new kendo.mobile.Application(document.body,
-{
-    transition:'slide',
-    skin: 'material-light',
-    platform: 'android'
-});
-
 $("document").ready(function(){
     $("body").on('click', '.get-image', function(){getPicture();});
     $("body").on('click', '.add-to-base', function(){setNewLine();});
