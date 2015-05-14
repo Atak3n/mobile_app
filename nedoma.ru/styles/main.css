@@ -126,7 +126,7 @@
   height: 194px;
 }
 
-.avatar {
+.sidemenu_avatar {
     margin:40px 0px 0px 20px;
 }
 
@@ -319,16 +319,30 @@ position:relative;
 }
 .reviews_head
 {
-font-size: 20pt;
-line-height: 2em;
-padding: 1em 0;
+font-size: 1.75em;
+line-height: 55px;
+padding: 26px 0;
+}
+.reviews_line
+{
+vertical-align:middle;    
+position:relative;
+}
+.reviews_line .km-material, .km-material *
+{
+vertical-align:middle;    
+}
+.reviews_line img
+{
+    padding: 0 17px;
 }
 .reviews_time
 {
- float: right;
-font-size: 18pt;
-margin-right: 2.75em;
-white-space: nowrap;  
+float: right;
+position: absolute;
+right: 50px;
+top: 0;
+white-space: nowrap;
 }
 .km-timer:after,
     .km-timer:before
@@ -343,9 +357,9 @@ line-height: 2em;
     background-color: rgb(76, 175, 82) !important;
 color: white;
 margin: 4.5%;
-padding: 20px 0 !important;
+padding: 1.2em 0 !important;
 width: 40%;
-font-size:14pt !important;
+font-size:1.2em !important;
 }
 
 .reviews_avatar {
