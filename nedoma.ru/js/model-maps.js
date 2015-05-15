@@ -103,6 +103,7 @@ var mapModel = kendo.observable({
 	    	$("#search_map").hide(200,function(){
                 that.set("isSearchVisible", false);
                 that.set("isTitleVisible", true);
+                $(this).css('z-index','0');
             });
 		}
 		else
@@ -110,7 +111,8 @@ var mapModel = kendo.observable({
             this.set("isSearchVisible", true);
             this.set("isTitleVisible", false);
             $("#search_map").hide(0);
-	    	$("#search_map").show(200);	    	
+	    	$("#search_map").show(200);	
+  			$("#search_map").css('z-index','100'); 
 		}
     },
     showLayers:function(elm){
