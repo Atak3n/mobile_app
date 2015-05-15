@@ -1,4 +1,5 @@
 var MapGlobalObject={
+    map_center:[52.924017, 87.982158],
     map:{},
     markerIcons:{},   
     mapInit: function(){
@@ -29,7 +30,7 @@ var MapGlobalObject={
                 group:new L.FeatureGroup(),
                 icon:new LeafIcon({iconUrl: baseurl+'marker_map_food.png'}),
         	}, 
-        	'shop' : {
+        	'shops' : {
                 default_view:0,
                 group:new L.FeatureGroup(),
                 icon:new LeafIcon({iconUrl: baseurl+'marker_map_products.png'}),
@@ -39,7 +40,7 @@ var MapGlobalObject={
                 group:new L.FeatureGroup(),
                 icon:new LeafIcon({iconUrl: baseurl+'marker_map_transport.png'}),
         	}, 
-        	'glc' : {
+        	'infrastructure' : {
                 default_view:0,
                 group:new L.FeatureGroup(),
                 icon:new LeafIcon({iconUrl: baseurl+'marker_map_lift.png'}),
@@ -52,14 +53,12 @@ var MapGlobalObject={
 		};
     	$('#map_canvas').height($('#map_role').height()-$('#map_role .km-navbar').height());
     	//$('#map_canvas').height("300px");
-    	map = L.map('map_canvas').setView([54.733333, 55.966667], 12);
+    	map = L.map('map_canvas').setView(MapGlobalObject.map_center, 14);
     	L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(map);
-    	MapGlobalObject.mapViewLayers('all_layers');
+        MapGlobalObject.getCoords('all_layers');
 	},
     mapViewLayers:function(layer){
-        var lo,la;
         for(var i in markerIcons){
-            app.C_L(layer);
         	if(layer!=i && layer!="all_layers") continue;
             if(!markerIcons[i]) continue;
             if(markerIcons[i].default_view) { // if this layer is visible -> do invisible
@@ -67,14 +66,37 @@ var MapGlobalObject={
                 markerIcons[i].group.clearLayers();
             } else { // if this layer is invisible -> do visible
                 markerIcons[i].default_view=1;
-                getCoords(i);               
-    			map.addLayer(markerIcons[i].group);
+                if(!markerIcons[i].data) continue;
+                for(var j=0;j<markerIcons[i].data.length;j++)
+                {
+                    var lo=markerIcons[i].data[j].coords.split(",");
+                    var la=lo[0];
+                    lo=lo[1];
+                    var name=markerIcons[i].data[j].name;
+                    markerIcons[i].group.addLayer(L.marker([la, lo],{icon: markerIcons[i].icon,name:name}).addTo(map).bindPopup(name).on('click',function(e){app.C_L(this)}));  
+                }
             }
+			map.addLayer(markerIcons[i].group);
         }
-	}
+	},
     getCoords: function(layerId){
-    
-	}
+    	$.ajax({
+    		url: app.proxyUrl,
+    		success: function(data){
+				//app.C_L(data);
+                for(var i in data){
+                    if(i=="") markerIcons["dwell"].data=data[i];
+                    else markerIcons[i].data=data[i];
+                }
+                MapGlobalObject.mapViewLayers('all_layers');
+    		},
+    		error: function(data){
+				app.C_L("ERROR"+data);
+    		},    		
+    		data: {id_name:'layerId',layerId:'all'},
+    		dataType:"json"
+    	});
+	},
 };
 var mapModel = kendo.observable({
    	map_title:"Карта",

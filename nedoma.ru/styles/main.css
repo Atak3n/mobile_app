@@ -402,12 +402,12 @@ position: fixed;
 width: 100%;
 }
 .km-searchclose:after,
-    .km-searchclose:before
-    {
-       color: black;
-content: "";
-left: 14em;
-position: absolute;
-top: 0.15em;
-z-index: 101;
-    }
+.km-searchclose:before
+{
+	color: black;
+	content: "";
+	left: 14em;
+	position: absolute;
+	top: 0.15em;
+	z-index: 101;
+}
