@@ -13,13 +13,13 @@ var MapGlobalObject={
 			}
 		});
         markerIcons={
-        	'housing' : {
+        	'dwell' : {
                 default_view:0,
                 group:new L.FeatureGroup(),
                 icon:new LeafIcon({iconUrl: baseurl+'marker_map_housing.png'})
         	},
             
-    		'funs' : {
+    		'fun' : {
                 default_view:0,
                 group:new L.FeatureGroup(),
                 icon:new LeafIcon({iconUrl: baseurl+'marker_map_entertainment.png'}),
@@ -39,7 +39,7 @@ var MapGlobalObject={
                 group:new L.FeatureGroup(),
                 icon:new LeafIcon({iconUrl: baseurl+'marker_map_transport.png'}),
         	}, 
-        	'lift' : {
+        	'glc' : {
                 default_view:0,
                 group:new L.FeatureGroup(),
                 icon:new LeafIcon({iconUrl: baseurl+'marker_map_lift.png'}),
@@ -67,15 +67,13 @@ var MapGlobalObject={
                 markerIcons[i].group.clearLayers();
             } else { // if this layer is invisible -> do visible
                 markerIcons[i].default_view=1;
-                for(var j=0;j<5;j++) 
-                {
-                    la=54.7386+j/10*Math.random();
-                    lo=55.9633+j/10*Math.random();
-                    markerIcons[i].group.addLayer(L.marker([la, lo],{icon: markerIcons[i].icon}).addTo(map).on('click',function(e){alert(i)}));
-                }
+                getCoords(i);               
     			map.addLayer(markerIcons[i].group);
             }
         }
+	}
+    getCoords: function(layerId){
+    
 	}
 };
 var mapModel = kendo.observable({
