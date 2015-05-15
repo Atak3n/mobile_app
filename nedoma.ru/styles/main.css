@@ -395,3 +395,9 @@ line-height: 2.5em;
 margin: 0;
 padding: 0 10px;
 }
+.map_submenu 
+{
+    background-color: rgba(255, 255, 255, 0.75);
+position: fixed;
+width: 100%;
+}
