@@ -19,8 +19,8 @@
 var app = {
     
     //app release - debug or production
-    release:'debug',
-    //release:'production',
+    //release:'debug',
+    release:'production',
     
     // Application Constructor
     initialize: function() {
@@ -56,6 +56,7 @@ var app = {
         if(this.release=="production") return false;
         console.log(text);
     },
-    proxyUrl:"http://nedoma2.ru",    
+    proxyUrl:"http://nedoma2.ru"
+    
 };
 app.initialize();

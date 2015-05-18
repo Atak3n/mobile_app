@@ -8,8 +8,10 @@
 	    	<a data-role="button" data-align="left" data-icon="layers"  data-bind="click: showSubmenu" data-transition="slide"></a>
 			<div id='map_searcher'>
         		<div data-bind="visible: isTitleVisible" data-role="view-title"></div>
-                  <span  class='km-icon km-searchclose'></span>
+                <!-- <div class="searchmap"> -->
                  <input  data-bind="visible: isSearchVisible" type="search" id='search_map' data-icon="searchclose" />
+                     <!--       <a class='km-icon km-searchclose'></a>
+                </div> -->
             </div>
             
     	    <a data-role="button" data-icon="search" data-align="right" data-bind="click: showSearchInput"></a>
