@@ -124,5 +124,8 @@ $("#search_map").kendoAutoComplete({
     dataSource: ["a","as","asd","asdf","asdfg","asdfgh","asdfghj"],
     filter: "startswith",
     placeholder: "Поиск...",
-    separator: ", "
+    separator: ", ",
+    height: 300,
+    //headerTemplate: "<div class='dropdown-header'></div>",
+    template: "<div class='dropdown-body'>#: data #</div>"
 });
