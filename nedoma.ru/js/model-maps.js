@@ -44,12 +44,14 @@ var MapGlobalObject={
                 default_view:0,
                 group:new L.FeatureGroup(),
                 icon:new LeafIcon({iconUrl: baseurl+'marker_map_lift.png'}),
-        	}, 
+        	},
+            /*
         	'baza' : {
                 default_view:0,
                 group:new L.FeatureGroup(),
                 icon:new LeafIcon({iconUrl: baseurl+'marker_map_baza.png'}),
         	}
+            */
 		};
     	$('#map_canvas').height($('#map_role').height()-$('#map_role .km-navbar').height());
     	//$('#map_canvas').height("300px");
@@ -66,6 +68,7 @@ var MapGlobalObject={
                 markerIcons[i].group.clearLayers();
             } else { // if this layer is invisible -> do visible
                 markerIcons[i].default_view=1;
+               // app.C_L(i+"__"+markerIcons[i].data.length);
                 if(!markerIcons[i].data) continue;
                 for(var j=0;j<markerIcons[i].data.length;j++)
                 {
