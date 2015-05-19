@@ -417,9 +417,9 @@ background-color: rgba(255, 255, 255, 0.7);
 bottom: 0;
 font-size: 1.25em;
 height: 80px;
-line-height: 80px;
-padding: 0 20px;
+padding: 20px;
 position: absolute;
+display:none;
 }
 .map_searcher_li
 {
