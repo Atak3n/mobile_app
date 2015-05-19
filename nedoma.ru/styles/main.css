@@ -444,3 +444,25 @@ padding: 0;
 {
     content: "\e013";
 }
+.map_submenu li[name] {
+    background-size: cover !important;
+ 	margin:5px !important;
+}
+li[name="shops"] {
+    background:url('../libs/leaflet/images/marker_map_products.png') !important;
+}
+li[name="infrastructure"] {
+    background:url(../libs/leaflet/images/marker_map_lift.png) !important;
+}
+li[name="food"] {
+    background:url(../libs/leaflet/images/marker_map_food.png) !important;
+}
+li[name="fun"] {
+    background:url(../libs/leaflet/images/marker_map_entertainment.png) !important;
+}
+li[name="transport"] {
+    background:url(../libs/leaflet/images/marker_map_transport.png) !important;
+}
+li[name="dwell"] {
+    background:url(../libs/leaflet/images/marker_map_housing.png) !important;
+}
