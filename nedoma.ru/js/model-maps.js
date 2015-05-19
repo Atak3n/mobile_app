@@ -60,12 +60,14 @@ var MapGlobalObject={
         	if(layer!=i && layer!="all_layers") continue;
             if(!markerIcons[i]) continue;
             if(markerIcons[i].default_view) { // if this layer is visible -> do invisible
-            	markerIcons[i].default_view=0;                
-                markerIcons[i].group.clearLayers();                
+            	markerIcons[i].default_view=0;     
+                $(".map_submenu li[name='"+i+"']").removeClass("pressed");
+                markerIcons[i].group.clearLayers();
             } else { // if this layer is invisible -> do visible
                 // app.C_L(i+"__"+markerIcons[i].data.length);
                 if(!markerIcons[i].data) { this.getCoords(i); continue; }
                 markerIcons[i].default_view=1;
+                $(".map_submenu li[name='"+i+"']").addClass("pressed");
                 markerIcons[i].group = L.markerClusterGroup();
                 for(var j=0;j<markerIcons[i].data.length;j++)
                 {

@@ -447,6 +447,11 @@ padding: 0;
 .map_submenu li[name] {
     background-size: cover !important;
  	margin:5px !important;
+    opacity:0.5;
+    border:0px !important;
+}
+.map_submenu li[name].pressed {
+    opacity:1;
 }
 li[name="shops"] {
     background:url('../libs/leaflet/images/marker_map_products.png') !important;
