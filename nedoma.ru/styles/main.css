@@ -268,6 +268,7 @@ width: 100%;
 
 #my-drawer .km-list {
   letter-spacing: -0.03em;
+    overflow-y: hidden;
 }
 
 .km-material .km-navbar .km-view-title {
@@ -374,9 +375,8 @@ font-size:1.2em !important;
 /* maps */
 #map_searcher
 {
-    width:94%;
     margin: 0 auto;
-padding: 0 10px;
+padding-top: 10px;
 }
 #search_map
 {
@@ -417,6 +417,30 @@ background-color: rgba(255, 255, 255, 0.7);
 bottom: 0;
 font-size: 1.25em;
 height: 80px;
-padding: 10px;
+line-height: 80px;
+padding: 0 20px;
 position: absolute;
+}
+.map_searcher_li
+{
+    padding:0.5em 1em !important;
+}
+.map_searcher_title
+{
+    padding:0;
+    margin:0;
+}
+.map_searcher_grey 
+{
+   color: lightgray;
+margin: 0;
+padding: 0; 
+}
+.map_searcher_back
+{
+ 
+}
+.km-searchback 
+{
+    content: "\e013";
 }

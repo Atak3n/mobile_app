@@ -6,15 +6,16 @@
 		<div data-role="navbar">
 	    	<a data-role="button" data-rel="drawer" href="#my-drawer" data-icon="drawer-button" data-align="left"></a>
 	    	<a data-role="button" data-align="left" data-icon="layers"  data-bind="click: showSubmenu" data-transition="slide"></a>
-			<div id='map_searcher'>
+			<!--<div id='map_searcher'>-->
         		<div data-bind="visible: isTitleVisible" data-role="view-title"></div>
-                <!-- <div class="searchmap"> -->
+                <!-- <div class="searchmap"> 
                  <input  data-bind="visible: isSearchVisible" type="search" id='search_map' data-icon="searchclose" />
-                     <!--       <a class='km-icon km-searchclose'></a>
-                </div> -->
+                          <a class='km-icon km-searchclose'></a>
+                </div> 
             </div>
             
-    	    <a data-role="button" data-icon="search" data-align="right" data-bind="click: showSearchInput"></a>
+    	    <a data-role="button" data-icon="search" data-align="right" data-bind="click: showSearchInput" href='views/page-map-searcher.html'></a>-->
+            <a data-role="button" data-icon="search" data-align="right" href='views/page-map-searcher.html'></a>
     	    <a data-role="button" data-align="right" data-icon="add_menu" href='#map-right-drawer' data-rel="drawer"></a>
 		</div>
 		<div class="map_submenu" data-transition="slide">
@@ -35,3 +36,5 @@
          Тестовый футерЪ
     </div>
 <div> 
+
+  

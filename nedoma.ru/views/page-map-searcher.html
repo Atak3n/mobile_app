@@ -1,0 +1,50 @@
+<div data-role="view" id='map_searcher'>
+    <div data-role="header" style='display:hidden'> </div>
+<div>
+     <a data-role="backbutton" class="map_searcher_back km-icon km-searchback"></a>
+     <ul data-role="listview" data-style="inset" id="filterable-listview">
+    </ul>
+    
+ 
+
+<script>
+    
+      $(document).ready(function() {
+      $("#filterable-listview").kendoMobileListView({
+          template: "<li class='map_searcher_li'><img style='float: left;margin-right: 15px;' src='images/${Image}'> <p class='map_searcher_title'>${Name}</p> <p class='map_searcher_grey'>${Description}</p></li>",
+          dataSource: {
+              data: [
+                  {
+                      Image: "sidebar_avatar.png",
+                      Name: "Smith",
+                      Description: " Descript..."
+                  },
+                  {
+                        Image: "sidebar_avatar.png",
+                      Name: "Jane",
+                      Description: " Descript..."
+              },
+                  {
+                        Image: "sidebar_avatar.png",
+                      Name: "Alister",
+                      Description: "Больше красочных описаний."
+              },
+                  {
+                        Image: "sidebar_avatar.png",
+                      Name: "Sharegesh",
+                      Description: " Description 38"
+              }]
+          },
+            filterable: {
+                field: "Name",
+                operator: "startswith"
+            }
+      });
+  });
+    
+   
+</script>
+
+    </div>
+    </div>  
+
