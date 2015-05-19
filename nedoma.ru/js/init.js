@@ -20,7 +20,7 @@ var app = {
     
     //app release - debug or production
     //release:'debug',
-    release:'production',
+    release:'debug',
     
     // Application Constructor
     initialize: function() {

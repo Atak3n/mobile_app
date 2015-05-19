@@ -16,59 +16,54 @@ var MapGlobalObject={
         markerIcons={
         	'dwell' : {
                 default_view:0,
-                group:new L.FeatureGroup(),
                 icon:new LeafIcon({iconUrl: baseurl+'marker_map_housing.png'})
         	},
             
     		'fun' : {
                 default_view:0,
-                group:new L.FeatureGroup(),
                 icon:new LeafIcon({iconUrl: baseurl+'marker_map_entertainment.png'}),
         	}, 
         	'food' : {
                 default_view:0,
-                group:new L.FeatureGroup(),
                 icon:new LeafIcon({iconUrl: baseurl+'marker_map_food.png'}),
         	}, 
         	'shops' : {
                 default_view:0,
-                group:new L.FeatureGroup(),
                 icon:new LeafIcon({iconUrl: baseurl+'marker_map_products.png'}),
         	}, 
         	'transport' : {
                 default_view:0,
-                group:new L.FeatureGroup(),
                 icon:new LeafIcon({iconUrl: baseurl+'marker_map_transport.png'}),
         	}, 
         	'infrastructure' : {
                 default_view:0,
-                group:new L.FeatureGroup(),
                 icon:new LeafIcon({iconUrl: baseurl+'marker_map_lift.png'}),
         	},
             /*
         	'baza' : {
                 default_view:0,
-                group:new L.FeatureGroup(),
                 icon:new LeafIcon({iconUrl: baseurl+'marker_map_baza.png'}),
         	}
             */
 		};
     	$('#map_canvas').height($('#map_role').height()-$('#map_role .km-navbar').height());
     	//$('#map_canvas').height("300px");
-    	map = L.map('map_canvas').setView(MapGlobalObject.map_center, 14);
-    	L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(map);
-        MapGlobalObject.getCoords('all_layers');
+    	map = L.map('map_canvas',{markerZoomAnimation:false}).setView(MapGlobalObject.map_center, 14);
+    	L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {detectRetina:true}).addTo(map);
+        for(var i in markerIcons) MapGlobalObject.getCoords(i);
 	},
     mapViewLayers:function(layer){
+        var l_id=-1;
+        var markers_arr=[];
         for(var i in markerIcons){
         	if(layer!=i && layer!="all_layers") continue;
             if(!markerIcons[i]) continue;
             if(markerIcons[i].default_view) { // if this layer is visible -> do invisible
-            	markerIcons[i].default_view=0;
-                markerIcons[i].group.clearLayers();
+            	markerIcons[i].default_view=0;                
+                markerIcons[i].group.clearLayers();                
             } else { // if this layer is invisible -> do visible
                 markerIcons[i].default_view=1;
-               // app.C_L(i+"__"+markerIcons[i].data.length);
+                // app.C_L(i+"__"+markerIcons[i].data.length);
                 if(!markerIcons[i].data) continue;
                 for(var j=0;j<markerIcons[i].data.length;j++)
                 {
@@ -76,10 +71,17 @@ var MapGlobalObject={
                     var la=lo[0];
                     lo=lo[1];
                     var name=markerIcons[i].data[j].name;
-                    markerIcons[i].group.addLayer(L.marker([la, lo],{icon: markerIcons[i].icon,name:name}).addTo(map).bindPopup(name).on('click',function(e){app.C_L(this)}));  
+                    markers_arr[markers_arr.length]=L.marker([la, lo],{icon: markerIcons[i].icon,name:name}).on('click',function()
+                    {
+                        $(".map_footer").html(this.options.name);
+                        if(l_id==this._leaflet_id) $(".map_footer").toggle(100);
+                        else $(".map_footer").fadeIn(100);
+                        l_id=this._leaflet_id;
+                    })
                 }
+                markerIcons[i].group=L.layerGroup(markers_arr);
+                map.addLayer(markerIcons[i].group);
             }
-			map.addLayer(markerIcons[i].group);
         }
 	},
     getCoords: function(layerId){
@@ -91,12 +93,13 @@ var MapGlobalObject={
                     if(i=="") markerIcons["dwell"].data=data[i];
                     else markerIcons[i].data=data[i];
                 }
-                MapGlobalObject.mapViewLayers('all_layers');
+                MapGlobalObject.mapViewLayers(layerId);
     		},
     		error: function(data){
-				app.C_L("ERROR"+data);
+                app.C_L("ERROR");
+				app.C_L(data);
     		},    		
-    		data: {id_name:'layerId',layerId:'all'},
+    		data: {id_name:'layerId',layerId:layerId},
     		dataType:"json"
     	});
 	},
