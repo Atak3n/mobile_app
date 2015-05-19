@@ -1,7 +1,12 @@
-<div data-role="view" id="map_role" data-layout="drawer-layout" data-init="MapGlobalObject.mapInit" data-title="Карта" data-model="mapModel">
+<div data-role="view" id="map_role" data-layout="drawer-layout" data-init="MapGlobalObject.mapInit" data-title="Карта" data-model="mapModel" data-use-native-scrolling="true">
    	<script src="js/model-maps.js"></script>
     <link rel="stylesheet" href="libs/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="libs/leaflet/MarkerCluster.css" />
+    <link rel="stylesheet" href="libs/leaflet/MarkerCluster.Default.css" />
+    
     <script src="libs/leaflet/leaflet.js"></script>
+    <script src="libs/leaflet/leaflet.markercluster.js"></script>
+    
     <div data-role="header"> 
 		<div data-role="navbar">
 	    	<a data-role="button" data-rel="drawer" href="#my-drawer" data-icon="drawer-button" data-align="left"></a>
@@ -20,12 +25,12 @@
 		</div>
 		<div class="map_submenu" data-transition="slide">
 	    	<ul data-role="buttongroup" data-index="1" data-bind="visible: isSubmenuVisible" >
-				<li name='shops' data-icon="play" data-bind="click: showLayers"></li>
-				<li name='infrastructure' data-icon="pause" data-bind="click: showLayers"></li>
-				<li name='food' data-icon="rewind" data-bind="click: showLayers"></li>
-				<li name='fun' data-icon="fastforward" data-bind="click: showLayers"></li>
-				<li name='dwell' data-icon="globe" data-bind="click: showLayers"></li>
-                <li name='transport' data-icon="globe" data-bind="click: showLayers"></li>
+                <li name='dwell' data-bind="click: showLayers"></li>
+                <li name='food' data-bind="click: showLayers"></li>
+                <li name='infrastructure' data-bind="click: showLayers"></li>
+                <li name='fun' data-bind="click: showLayers"></li>
+				<li name='shops' data-bind="click: showLayers"></li>
+             	<li name='transport' data-bind="click: showLayers"></li>
 	    	</ul> 
 		</div>
     </div>   

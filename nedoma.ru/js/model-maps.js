@@ -66,21 +66,31 @@ var MapGlobalObject={
                 // app.C_L(i+"__"+markerIcons[i].data.length);
                 if(!markerIcons[i].data) { this.getCoords(i); continue; }
                 markerIcons[i].default_view=1;
+                markerIcons[i].group = L.markerClusterGroup();
                 for(var j=0;j<markerIcons[i].data.length;j++)
                 {
                     var lo=markerIcons[i].data[j].coords.split(",");
                     var la=lo[0];
                     lo=lo[1];
                     var name=markerIcons[i].data[j].name;
+                    markerIcons[i].group.addLayer(
+                        L.marker([la, lo],{icon: markerIcons[i].icon,name:name}).on('click',function() {
+                        	$(".map_footer").html(this.options.name);
+                        	if(l_id==this._leaflet_id) $(".map_footer").toggle(100);
+                        	else $(".map_footer").fadeIn(100);
+                        	l_id=this._leaflet_id;
+                    	})
+                    );
+                    /*
                     markers_arr[markers_arr.length]=L.marker([la, lo],{icon: markerIcons[i].icon,name:name}).on('click',function()
                     {
                         $(".map_footer").html(this.options.name);
                         if(l_id==this._leaflet_id) $(".map_footer").toggle(100);
                         else $(".map_footer").fadeIn(100);
                         l_id=this._leaflet_id;
-                    })
+                    });
+                    */
                 }
-                markerIcons[i].group=L.layerGroup(markers_arr);
                 map.addLayer(markerIcons[i].group);
             }
         }
