@@ -446,12 +446,12 @@ padding: 0;
 }
 .map_submenu li[name] {
     background-size: cover !important;
- 	margin:5px !important;
-    opacity:0.5;
+ 	margin:12px 10px !important;
     border:0px !important;
+    -webkit-filter: grayscale(100%);
 }
 .map_submenu li[name].pressed {
-    opacity:1;
+    -webkit-filter: grayscale(0%);
 }
 li[name="shops"] {
     background:url('../libs/leaflet/images/marker_map_products.png') !important;
