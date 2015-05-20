@@ -68,7 +68,13 @@ var MapGlobalObject={
                 if(!markerIcons[i].data) { this.getCoords(i); continue; }
                 markerIcons[i].default_view=1;
                 $(".map_submenu li[name='"+i+"']").addClass("pressed");
+                
                 markerIcons[i].group = L.markerClusterGroup();
+                markerIcons[i].group.on('animationend',function() {
+                    //for(var j in this._featureGroup._layers) 
+                    app.C_L(this);
+                });
+                
                 for(var j=0;j<markerIcons[i].data.length;j++)
                 {
                     var lo=markerIcons[i].data[j].coords.split(",");
@@ -83,15 +89,6 @@ var MapGlobalObject={
                         	l_id=this._leaflet_id;
                     	})
                     );
-                    /*
-                    markers_arr[markers_arr.length]=L.marker([la, lo],{icon: markerIcons[i].icon,name:name}).on('click',function()
-                    {
-                        $(".map_footer").html(this.options.name);
-                        if(l_id==this._leaflet_id) $(".map_footer").toggle(100);
-                        else $(".map_footer").fadeIn(100);
-                        l_id=this._leaflet_id;
-                    });
-                    */
                 }
                 map.addLayer(markerIcons[i].group);
             }
